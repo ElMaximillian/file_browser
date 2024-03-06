@@ -37,8 +37,10 @@
     <ClCompile Include="test1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp">
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="main.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
+    </QtMoc>
   </ItemGroup>
 </Project>
