@@ -68,7 +68,17 @@ protected:
             QFile file(filePath);
             if (file.remove())
                 model()->removeRow(index.row(), index.parent());
-            
+            else
+            {
+                QDir dir(filePath);
+                if (dir.exists())
+                {
+                    if (dir.removeRecursively())
+                        model()->removeRow(index.row(), index.parent());
+                    else
+                        QMessageBox::warning(this, tr("Error"), tr("Failed to delete directory."));
+                }
+            }
         }
     }
 };
